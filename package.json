@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "generative",
+  "workspaces": [
+    "lines-in-circle-01",
+    "lines-in-circle-02",
+    "lines-01",
+    "lines-02",
+    "tiles-01",
+    "generative-06"
+  ]
+}
