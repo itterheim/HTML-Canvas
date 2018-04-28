@@ -10,6 +10,7 @@
         "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
         "no-console": false,
         "max-line-length": false,
-        "space-before-function-paren": [true, {"anonymous": "always", "named": "always", "asyncArrow": "always"}]
+        "space-before-function-paren": [true, {"anonymous": "always", "named": "always", "asyncArrow": "always"}],
+        "no-bitwise": false
     }
 }
