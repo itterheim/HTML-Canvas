@@ -11,6 +11,7 @@
         "no-console": false,
         "max-line-length": false,
         "space-before-function-paren": [true, {"anonymous": "always", "named": "always", "asyncArrow": "always"}],
-        "no-bitwise": false
+        "no-bitwise": false,
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"]
     }
 }
