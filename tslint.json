@@ -1,3 +1,20 @@
+// {
+//     "extends": "tslint:latest",
+//     "rules": {
+//         "quotemark": [true, "single"],
+//         "semicolon": [true, "always"],
+//         "no-var-keyword": true,
+//         "no-consecutive-blank-lines": true,
+//         "no-unused-expression": [true, "allow-fast-null-checks", "allow-new", "allow-tagged-template"],
+//         "no-unused-variable": [true, "check-parameters"],
+//         "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+//         "no-console": false,
+//         "max-line-length": false,
+//         "space-before-function-paren": [true, {"anonymous": "always", "named": "always", "asyncArrow": "always"}],
+//         "no-bitwise": false,
+//         "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"]
+//     }
+// }
 {
     "extends": "tslint:latest",
     "rules": {
@@ -6,12 +23,24 @@
         "no-var-keyword": true,
         "no-consecutive-blank-lines": true,
         "no-unused-expression": [true, "allow-fast-null-checks", "allow-new", "allow-tagged-template"],
-        "no-unused-variable": [true, "check-parameters"],
+        "no-implicit-dependencies": false,
         "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
         "no-console": false,
         "max-line-length": false,
-        "space-before-function-paren": [true, {"anonymous": "always", "named": "always", "asyncArrow": "always"}],
+        "space-before-function-paren": [true, {
+            "anonymous": "always",
+            "named": "always",
+            "asyncArrow": "always",
+            "constructor": "always",
+            "method": "always"
+        }],
         "no-bitwise": false,
-        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"]
+        "variable-name": [true, "ban-keywords"],
+        "object-literal-sort-keys": false,
+        "prefer-conditional-expression": false,
+        "no-any": false,
+        "interface-name": false,
+        "max-classes-per-file": true,
+        "prefer-for-of": false
     }
 }

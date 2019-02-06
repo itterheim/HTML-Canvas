@@ -8,10 +8,12 @@
     "lines-02",
     "tiles-01",
     "tiles-02",
+    "tiles-03",
     "generative-06",
     "squares-01",
     "colors-01",
     "quadtree-01",
-    "atom-01"
+    "atom-01",
+    "traffic-01"
   ]
 }

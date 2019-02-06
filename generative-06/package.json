@@ -9,6 +9,6 @@
     "build": "parcel build index.html -d ./build --public-url ./"
   },
   "devDependencies": {
-    "typescript": "^2.8.3"
+    "typescript": "^3.2.2"
   }
 }
