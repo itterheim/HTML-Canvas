@@ -17,10 +17,10 @@ export class App {
             window.anim = window.requestAnimationFrame((t) => render(t));
 
             this.ctx.fillRect(
-                Math.floor(Math.random() * this.canvas.width),
-                Math.floor(Math.random() * this.canvas.height),
-                1,
-                1
+                Math.floor(Math.random() * this.canvas.width) - 1,
+                Math.floor(Math.random() * this.canvas.height) - 1,
+                2,
+                2
             );
         };
 
