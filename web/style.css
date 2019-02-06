@@ -1,21 +1,21 @@
-body {
-    margin: 0;
-    font-family: 'Roboto', serif;
-}
+body { margin: 0; font-family: 'Roboto', serif; }
 
-h1 { padding: 0; margin: 30px 0 0 60px; }
+h1 { padding: 0; margin: 30px 0 0 0; text-align: center; }
 h1 span { font-size: 60%; position: relative; top: -3px; }
 
-div.links {
-    padding: 30px 30px 0 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-a { display: block; width: 350px; color: #000; text-decoration: none; margin: 0 30px 30px 0; }
+div.links { padding: 30px 30px 0 30px; display: flex; flex-direction: row; flex-wrap: wrap; align-content: center; justify-content: center; }
+a { display: block; width: 350px; color: #000; text-decoration: none; margin: 0 15px 30px 15px; }
 a h2 { padding: 0 0 10px 0; margin: 0 0 15px 0; border-bottom: 2px solid #000; font-weight: normal; }
 a:hover h2 { color: #0096ec; border-color: #0096ec }
 a img,
 a div { display: block; width: 350px; height: 200px; background: #eee }
 a:hover img,
 a:hover div { box-shadow: 0 0 0 2px #0096ec inset; }
+
+@media screen and (max-width: 450px) {
+    h1 { font-size: 1.7em; }
+    a { width: 300px; }
+    a h2 { font-size: 1.5em; }
+    a img,
+    a div { width: 300px; height: 171px; }
+}
