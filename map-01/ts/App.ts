@@ -17,8 +17,8 @@ export class App {
             window.anim = window.requestAnimationFrame((t) => render(t));
 
             this.ctx.fillRect(
-                Math.floor(Math.random() * this.canvas.width) - 1,
-                Math.floor(Math.random() * this.canvas.height) - 1,
+                Math.floor(Math.random() * this.canvas.width),
+                Math.floor(Math.random() * this.canvas.height),
                 2,
                 2
             );
@@ -30,8 +30,6 @@ export class App {
     private setCanvasSize () {
         const w = document.body.clientWidth;
         const h = document.body.clientHeight;
-
-        alert(window.devicePixelRatio);
 
         if (typeof window.devicePixelRatio === 'number') {
             this.canvas.width = w * window.devicePixelRatio;
