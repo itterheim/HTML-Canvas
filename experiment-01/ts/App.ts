@@ -16,7 +16,7 @@ export class App {
     private rows = 50;
     private columns = 100;
     private scale = 10;
-    private diffusion = 0.08;
+    private diffusion = 0.05;
 
     private tiles: Tile[] = [];
 
@@ -56,8 +56,9 @@ export class App {
         const step = (time: number) => {
             window.anim = window.requestAnimationFrame((t) => step(t));
             const speed = Vector.random(4);
-            speed.add(new Vector(2, 0));
-            this.tiles[this.xy(Math.floor(this.columns / 4), Math.floor(this.rows / 2))].addSpeed(speed);
+            // const speed = new Vector(2, 1);
+            // speed.add(new Vector(2, 0));
+            this.tiles[this.xy(Math.floor(this.columns / 2), Math.floor(this.rows / 2))].addSpeed(speed);
             this.clear();
             this.update();
             this.render();
