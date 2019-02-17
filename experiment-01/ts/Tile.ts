@@ -11,7 +11,7 @@ export class Tile {
         // ctx.strokeRect(this.x * scale, this.y * scale, scale, scale);
 
         if (this.out) {
-            const r = Math.sqrt(this.out.x * this.out.x + this.out.y * this.out.y) / 2;
+            const r = this.out.magnitude / 2;
             const color = `rgba(0,0,0,${Math.min(r, 1)})`;
             ctx.fillStyle = color;
             ctx.fillRect(this.x * scale, this.y * scale, scale, scale);

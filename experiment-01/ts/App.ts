@@ -13,9 +13,10 @@ export class App {
     private canvas: HTMLCanvasElement;
     private ctx: CanvasRenderingContext2D;
 
-    private size = 100;
+    private rows = 100;
+    private columns = 100;
     private scale = 10;
-    private diffusion = 0.1;
+    private diffusion = 0.08;
 
     private tiles: Tile[] = [];
 
@@ -35,7 +36,8 @@ export class App {
         window.onresize = () => this.resize();
         this.resize();
 
-        this.scale = (Math.min(this.canvas.width, this.canvas.height) / this.size);
+        this.scale = this.canvas.height / this.rows;
+        this.columns = Math.floor(this.canvas.width / this.scale);
 
         this.run();
     }
@@ -44,8 +46,8 @@ export class App {
         console.clear();
 
         this.tiles = [];
-        for (let xy = 0; xy < this.size; xy++) {
-            for (let xi = 0; xi < this.size; xi++) {
+        for (let xy = 0; xy < this.rows; xy++) {
+            for (let xi = 0; xi < this.columns; xi++) {
                 const tile = new Tile(xi, xy);
                 this.tiles.push(tile);
             }
@@ -55,7 +57,7 @@ export class App {
             window.anim = window.requestAnimationFrame((t) => step(t));
             const speed = Vector.random(4);
             speed.add(new Vector(2, 0));
-            this.tiles[this.xy(Math.floor(this.size / 4), Math.floor(this.size / 2))].addSpeed(speed);
+            this.tiles[this.xy(Math.floor(this.columns / 4), Math.floor(this.rows / 2))].addSpeed(speed);
             this.clear();
             this.update();
             this.render();
@@ -133,22 +135,22 @@ export class App {
     private xy (x: number, y: number): number {
         if (x < 0) { return -1; }
         if (y < 0) { return -1; }
-        if (x >= this.size) { return -1; }
-        if (x >= this.size) { return -1; }
+        if (x >= this.columns) { return -1; }
+        if (y >= this.rows) { return -1; }
 
-        return y * this.size + x;
+        return y * this.columns + x;
     }
 
     private getPosition (p: Vector, s: Vector): Vector {
         p.add(s);
         p.round();
 
-        if (p.x >= this.size) {
-            p.x = p.x - (p.x - this.size) - 1;
+        if (p.x >= this.columns) {
+            p.x = p.x - (p.x - this.columns) - 1;
             s.x *= -1;
         }
-        if (p.y >= this.size) {
-            p.y = p.y - (p.y - this.size) - 1;
+        if (p.y >= this.rows) {
+            p.y = p.y - (p.y - this.rows) - 1;
             s.y *= -1;
         }
         if (p.x < 0) {
