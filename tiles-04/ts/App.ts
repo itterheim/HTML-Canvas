@@ -26,7 +26,7 @@ export class App {
         };
         this.resize();
 
-        const mouseCallback = (e) => {
+        window.onmousemove = (e: MouseEvent) => {
             if (typeof window.devicePixelRatio === 'number') {
                 this.mouse = {
                     x: e.clientX * window.devicePixelRatio,
@@ -41,8 +41,20 @@ export class App {
             window.requestAnimationFrame(() => this.render());
         };
 
-        window.onmousemove = mouseCallback;
-        window.ontouchmove = mouseCallback;
+        window.ontouchmove = (e: TouchEvent) => {
+            if (typeof window.devicePixelRatio === 'number') {
+                this.mouse = {
+                    x: e.touches[0].clientX * window.devicePixelRatio,
+                    y: e.touches[0].clientY * window.devicePixelRatio
+                };
+            } else {
+                this.mouse = {
+                    x: e.touches[0].clientX,
+                    y: e.touches[0].clientY
+                };
+            }
+            window.requestAnimationFrame(() => this.render());
+        };
 
         this.run();
     }
@@ -95,5 +107,7 @@ export class App {
             x: 1 / 3 * this.canvas.width,
             y: 1 / 3 * this.canvas.height
         };
+
+        this.tileSize = Math.floor(Math.max(this.canvas.width, this.canvas.height) / 250) * 10;
     }
 }
