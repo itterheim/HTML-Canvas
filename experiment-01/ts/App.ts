@@ -13,7 +13,7 @@ export class App {
     private canvas: HTMLCanvasElement;
     private ctx: CanvasRenderingContext2D;
 
-    private rows = 100;
+    private rows = 50;
     private columns = 100;
     private scale = 10;
     private diffusion = 0.08;
