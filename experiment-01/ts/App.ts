@@ -15,7 +15,7 @@ export class App {
 
     private size = 100;
     private scale = 10;
-    private diffusion = 0.01;
+    private diffusion = 0.1;
 
     private tiles: Tile[] = [];
 
@@ -47,15 +47,15 @@ export class App {
         for (let xy = 0; xy < this.size; xy++) {
             for (let xi = 0; xi < this.size; xi++) {
                 const tile = new Tile(xi, xy);
-                // tile.addSpeed(Vector.random());
                 this.tiles.push(tile);
             }
         }
-        // this.tiles[this.xy(0, Math.floor(this.size / 2))].addSpeed(new Vector(3, 0));
 
         const step = (time: number) => {
             window.anim = window.requestAnimationFrame((t) => step(t));
-            this.tiles[this.xy(Math.floor(this.size / 2), Math.floor(this.size / 2))].addSpeed(Vector.random(4));
+            const speed = Vector.random(4);
+            speed.add(new Vector(2, 0));
+            this.tiles[this.xy(Math.floor(this.size / 4), Math.floor(this.size / 2))].addSpeed(speed);
             this.clear();
             this.update();
             this.render();
