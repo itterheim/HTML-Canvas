@@ -25,7 +25,7 @@ export class App {
 
         document.body.insertAdjacentElement('afterbegin', this.canvas);
 
-        window.onresize = () => this.resize();
+        // window.onresize = () => this.resize();
         this.resize();
 
         this.run();
@@ -33,8 +33,6 @@ export class App {
 
     private run () {
         console.clear();
-
-        window.cancelAnimationFrame(window.anim);
 
         const tile = 15;
         const maze = new Maze(Math.floor((this.canvas.width - 50) / tile), Math.floor((this.canvas.height - 50) / tile));
