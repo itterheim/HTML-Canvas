@@ -1,20 +1,3 @@
-// {
-//     "extends": "tslint:latest",
-//     "rules": {
-//         "quotemark": [true, "single"],
-//         "semicolon": [true, "always"],
-//         "no-var-keyword": true,
-//         "no-consecutive-blank-lines": true,
-//         "no-unused-expression": [true, "allow-fast-null-checks", "allow-new", "allow-tagged-template"],
-//         "no-unused-variable": [true, "check-parameters"],
-//         "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
-//         "no-console": false,
-//         "max-line-length": false,
-//         "space-before-function-paren": [true, {"anonymous": "always", "named": "always", "asyncArrow": "always"}],
-//         "no-bitwise": false,
-//         "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"]
-//     }
-// }
 {
     "extends": "tslint:latest",
     "rules": {
